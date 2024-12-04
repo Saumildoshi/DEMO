@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GuU-9c-RTF">
+    <device id="ipad12_9" orientation="portrait" layout="fullscreen" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--MainVC-->
+        <scene sceneID="YUS-2Z-bRi">
+            <objects>
+                <viewController storyboardIdentifier="MainVC" id="GuU-9c-RTF" customClass="MainVC" customModule="Neovify_completed_task" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="H6a-ZJ-tG4">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="T7C-2z-plC">
+                                <rect key="frame" x="0.0" y="20" width="1024" height="1346"/>
+                                <color key="backgroundColor" name="bgColor"/>
+                                <view key="tableHeaderView" contentMode="scaleToFill" id="YhF-07-WuX">
+                                    <rect key="frame" x="0.0" y="0.0" width="1024" height="464"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="FZr-dM-hpa">
+                                            <rect key="frame" x="0.0" y="20" width="1024" height="402"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="402" id="zvz-Oz-qFY"/>
+                                            </constraints>
+                                            <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="KAW-HW-joe">
+                                                <size key="itemSize" width="128" height="128"/>
+                                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                            </collectionViewFlowLayout>
+                                            <cells>
+                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="BannerCollectionViewCell" id="OfX-jT-udn" customClass="BannerCollectionViewCell" customModule="Neovify_completed_task" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="n4i-iz-php">
+                                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                    </collectionViewCellContentView>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </collectionViewCell>
+                                            </cells>
+                                            <connections>
+                                                <outlet property="dataSource" destination="GuU-9c-RTF" id="krr-tm-vjF"/>
+                                                <outlet property="delegate" destination="GuU-9c-RTF" id="2d9-CO-miu"/>
+                                            </connections>
+                                        </collectionView>
+                                        <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="yF0-sT-6Iq">
+                                            <rect key="frame" x="454" y="437" width="116" height="26"/>
+                                        </pageControl>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="yF0-sT-6Iq" secondAttribute="bottom" constant="1" id="7ED-KG-L5h"/>
+                                        <constraint firstItem="FZr-dM-hpa" firstAttribute="leading" secondItem="YhF-07-WuX" secondAttribute="leading" id="UXL-uo-sXT"/>
+                                        <constraint firstItem="FZr-dM-hpa" firstAttribute="top" secondItem="YhF-07-WuX" secondAttribute="top" constant="20" id="fv5-HT-ia8"/>
+                                        <constraint firstItem="yF0-sT-6Iq" firstAttribute="top" secondItem="FZr-dM-hpa" secondAttribute="bottom" constant="15" id="l8z-FT-GTU"/>
+                                        <constraint firstItem="yF0-sT-6Iq" firstAttribute="centerX" secondItem="FZr-dM-hpa" secondAttribute="centerX" id="lTw-6l-JIU"/>
+                                        <constraint firstAttribute="trailing" secondItem="FZr-dM-hpa" secondAttribute="trailing" id="m47-7r-Nh6"/>
+                                    </constraints>
+                                </view>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HeaderTableViewCell" id="aNn-fb-oKH" customClass="HeaderTableViewCell" customModule="Neovify_completed_task" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="514" width="1024" height="51.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aNn-fb-oKH" id="GLR-ou-cjX">
+                                            <rect key="frame" x="0.0" y="0.0" width="1024" height="51.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ChannelListTableViewCell" rowHeight="154" id="N0z-Xc-EQW" customClass="ChannelListTableViewCell" customModule="Neovify_completed_task" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="565.5" width="1024" height="154"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="N0z-Xc-EQW" id="eJA-kf-2zy">
+                                            <rect key="frame" x="0.0" y="0.0" width="1024" height="154"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="GuU-9c-RTF" id="2mD-m7-7Uf"/>
+                                    <outlet property="delegate" destination="GuU-9c-RTF" id="for-K4-pwC"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="hff-jR-Lkp"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="hff-jR-Lkp" firstAttribute="trailing" secondItem="T7C-2z-plC" secondAttribute="trailing" id="U8o-Ah-sFE"/>
+                            <constraint firstItem="T7C-2z-plC" firstAttribute="leading" secondItem="hff-jR-Lkp" secondAttribute="leading" id="iVO-Xa-cP8"/>
+                            <constraint firstItem="hff-jR-Lkp" firstAttribute="bottom" secondItem="T7C-2z-plC" secondAttribute="bottom" id="mbq-j0-cVo"/>
+                            <constraint firstItem="T7C-2z-plC" firstAttribute="top" secondItem="hff-jR-Lkp" secondAttribute="top" id="ohB-a2-oi6"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="colBanner" destination="FZr-dM-hpa" id="Ewa-2T-VKu"/>
+                        <outlet property="pageController" destination="yF0-sT-6Iq" id="yCe-mK-XOh"/>
+                        <outlet property="tblList" destination="T7C-2z-plC" id="NES-lD-Yo1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jxd-OB-yNo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="65.625" y="89.604685212298676"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="gKA-6H-Ccy">
+            <objects>
+                <viewController id="ki7-H0-j4I" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3tl-aK-5NU">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zWS-AU-K9w">
+                                <rect key="frame" x="461" y="460" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <viewLayoutGuide key="contentLayoutGuide" id="mDo-xT-K8q"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="iSU-ik-FIf"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Qvs-HK-gTv"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JM5-sc-6M5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="783" y="-37"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="bgColor">
+            <color red="0.0" green="0.16862745098039217" blue="0.32549019607843138" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
